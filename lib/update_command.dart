@@ -65,8 +65,6 @@ ${dcli.orange('Please select a brand')}
         "static const brand = Brands.epson",
         'static const brand = Brands.${SwitchBranding.brand.name}');
 
-    print(updatedbranding3);
-
     File('lib/common/branding.dart').writeAsStringSync(updatedbranding3);
 
     print('''
@@ -110,12 +108,8 @@ ${dcli.orange('Please select a brand')}
     //load the pubspec file
     final pubspec = File('pubspec.yaml').readAsStringSync();
 
-    // 'image_path'
-
     final updatedPubSpec = pubspec.replaceFirst(
         "image_path:", 'image_path: "${SwitchBranding.getBranding().appLogo}"');
-
-    print(updatedPubSpec);
 
     File('pubspec.yaml').writeAsStringSync(updatedPubSpec);
 
@@ -174,13 +168,13 @@ class SwitchBranding {
       case Brands.wriety:
         return Branding(
           name: "Wriety",
-          appLogo: "assets/branding/wriety/wriety_app_logo.svg",
+          appLogo: "assets/branding/wriety/wriety_app_logo.png",
           packageName: 'play.wriety',
         );
       case Brands.epson:
         return Branding(
           name: "EPSON",
-          appLogo: "assets/branding/epson/Epson-E_logo.svg",
+          appLogo: "assets/branding/epson/epson logo.png",
           packageName: 'play.wriety.epson',
         );
       case Brands.dahua:
