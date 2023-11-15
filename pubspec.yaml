@@ -1,7 +1,7 @@
 name: wriety_cli
-description: A sample command-line application.
+description: A CLI tool for updating branding information.
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/elysian12/wriety_cli
 
 environment:
   sdk: ^3.1.3
