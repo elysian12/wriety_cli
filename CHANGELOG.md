@@ -1,4 +1,5 @@
 ## 1.0.0
+- downgrade the dart version.
 
 - Initial version.
 ## 1.0.1
@@ -7,6 +8,11 @@
 ## 1.0.2
 
 - Updated Readme.
+## 1.0.3
+
+- Added more brands.
+## 1.0.4
+
 
 
 

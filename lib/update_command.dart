@@ -52,18 +52,10 @@ ${dcli.orange('Please select a brand')}
 
     // 'image_path'
 
-    final updatedbranding = branding.replaceFirst(
-        "static const brand = Brands.hikvision",
-        'static const brand = Brands.${SwitchBranding.brand.name}');
-    final updatedbranding1 = updatedbranding.replaceFirst(
-        "static const brand = Brands.wriety",
-        'static const brand = Brands.${SwitchBranding.brand.name}');
-    final updatedbranding2 = updatedbranding1.replaceFirst(
-        "static const brand = Brands.dahua",
-        'static const brand = Brands.${SwitchBranding.brand.name}');
-    final updatedbranding3 = updatedbranding2.replaceFirst(
-        "static const brand = Brands.epson",
-        'static const brand = Brands.${SwitchBranding.brand.name}');
+    final updatedbranding = branding.replaceFirst("static const brand = Brands.hikvision", 'static const brand = Brands.${SwitchBranding.brand.name}');
+    final updatedbranding1 = updatedbranding.replaceFirst("static const brand = Brands.wriety", 'static const brand = Brands.${SwitchBranding.brand.name}');
+    final updatedbranding2 = updatedbranding1.replaceFirst("static const brand = Brands.dahua", 'static const brand = Brands.${SwitchBranding.brand.name}');
+    final updatedbranding3 = updatedbranding2.replaceFirst("static const brand = Brands.epson", 'static const brand = Brands.${SwitchBranding.brand.name}');
 
     File('lib/common/branding.dart').writeAsStringSync(updatedbranding3);
 
@@ -73,12 +65,7 @@ ${dcli.orange('Please select a brand')}
 # ---------------------------------
 ''');
 
-    final packageresult = await Process.run('flutter', [
-      'pub',
-      'run',
-      'change_app_package_name:main',
-      SwitchBranding.getBranding().packageName
-    ]);
+    final packageresult = await Process.run('flutter', ['pub', 'run', 'change_app_package_name:main', SwitchBranding.getBranding().packageName]);
 
     print(packageresult.stdout);
     print(packageresult.stderr);
@@ -108,8 +95,7 @@ ${dcli.orange('Please select a brand')}
     //load the pubspec file
     final pubspec = File('pubspec.yaml').readAsStringSync();
 
-    final updatedPubSpec = pubspec.replaceFirst(
-        "image_path:", 'image_path: "${SwitchBranding.getBranding().appLogo}"');
+    final updatedPubSpec = pubspec.replaceFirst("image_path:", 'image_path: "${SwitchBranding.getBranding().appLogo}"');
 
     File('pubspec.yaml').writeAsStringSync(updatedPubSpec);
 
@@ -117,8 +103,7 @@ ${dcli.orange('Please select a brand')}
     print(pubGetResult.stdout);
     print(pubGetResult.stderr);
 
-    final logoresult =
-        await Process.run('flutter', ['pub', 'run', 'flutter_launcher_icons']);
+    final logoresult = await Process.run('flutter', ['pub', 'run', 'flutter_launcher_icons']);
 
     print(logoresult.stdout);
     print(logoresult.stderr);
@@ -131,8 +116,7 @@ ${dcli.orange('Please select a brand')}
 
     final pubspec1 = File('pubspec.yaml').readAsStringSync();
 
-    final updatedPubSpec1 = pubspec1.replaceFirst(
-        'image_path: "${SwitchBranding.getBranding().appLogo}"', "image_path:");
+    final updatedPubSpec1 = pubspec1.replaceFirst('image_path: "${SwitchBranding.getBranding().appLogo}"', "image_path:");
 
     File('pubspec.yaml').writeAsStringSync(updatedPubSpec1);
 
@@ -179,8 +163,8 @@ class SwitchBranding {
         );
       case Brands.dahua:
         return Branding(
-          name: "DeepHub",
-          appLogo: "assets/branding/dahua/deephub_white.png",
+          name: "DeepHub Canvas",
+          appLogo: "assets/branding/dahua/deephub_logo.png",
           packageName: 'play.wriety.deephubcanvas',
         );
       case Brands.hikvision:
@@ -189,13 +173,26 @@ class SwitchBranding {
           appLogo: "assets/branding/hikvision/hikvision_app_logo.png",
           packageName: 'play.wriety.hikvision',
         );
+      case Brands.aiBoard:
+        return Branding(
+          name: "Ai Board",
+          appLogo: "assets/branding/aiboard/ai_app_logo.png",
+          packageName: 'play.wriety.aiboard',
+        );
+      case Brands.hitevision:
+        return Branding(
+          name: "Newline Canvas",
+          appLogo: "assets/branding/hitevision/hitevision_app_logo.png",
+          packageName: 'play.wriety.hitevision_in_me',
+        );
+      case Brands.crown:
+        return Branding(
+          name: "Ai Board",
+          appLogo: "assets/branding/aiboard/ai_app_logo.png",
+          packageName: 'play.wriety.crown',
+        );
     }
   }
 }
 
-enum Brands {
-  wriety,
-  epson,
-  dahua,
-  hikvision,
-}
+enum Brands { wriety, epson, dahua, hikvision, aiBoard, hitevision, crown }
