@@ -1,6 +1,6 @@
 name: wriety_cli
 description: A CLI tool for updating branding information.
-version: 1.0.4
+version: 1.0.5
 repository: https://github.com/elysian12/wriety_cli
 
 environment:
