@@ -20,6 +20,9 @@ ${dcli.orange('Please select a brand')}
 2) ${dcli.green('Dahua')} 
 3) ${dcli.green('HikVision')} 
 4) ${dcli.green('Epson')} 
+5) ${dcli.green('Generic')} 
+6) ${dcli.green('HiteVision')} 
+7) ${dcli.green('Crown')} 
 
 ''');
 
@@ -37,6 +40,12 @@ ${dcli.orange('Please select a brand')}
         break;
       case '4':
         SwitchBranding.updateBranding(Brands.epson);
+      case '5':
+        SwitchBranding.updateBranding(Brands.aiBoard);
+      case '6':
+        SwitchBranding.updateBranding(Brands.hitevision);
+      case '7':
+        SwitchBranding.updateBranding(Brands.crown);
         break;
       default:
     }
@@ -56,8 +65,11 @@ ${dcli.orange('Please select a brand')}
     final updatedbranding1 = updatedbranding.replaceFirst("static const brand = Brands.wriety", 'static const brand = Brands.${SwitchBranding.brand.name}');
     final updatedbranding2 = updatedbranding1.replaceFirst("static const brand = Brands.dahua", 'static const brand = Brands.${SwitchBranding.brand.name}');
     final updatedbranding3 = updatedbranding2.replaceFirst("static const brand = Brands.epson", 'static const brand = Brands.${SwitchBranding.brand.name}');
+    final updatedbranding4 = updatedbranding3.replaceFirst("static const brand = Brands.aiBoard", 'static const brand = Brands.${SwitchBranding.brand.name}');
+    final updatedbranding5 = updatedbranding4.replaceFirst("static const brand = Brands.hitevision", 'static const brand = Brands.${SwitchBranding.brand.name}');
+    final updatedbranding6 = updatedbranding5.replaceFirst("static const brand = Brands.crown", 'static const brand = Brands.${SwitchBranding.brand.name}');
 
-    File('lib/common/branding.dart').writeAsStringSync(updatedbranding3);
+    File('lib/common/branding.dart').writeAsStringSync(updatedbranding6);
 
     print('''
 # ---------------------------------

@@ -11,7 +11,14 @@
 ## 1.0.3
 
 - Added more brands.
+
 ## 1.0.4
+
+- Added more brands.
+
+## 1.0.5
+
+- Added more options.
 
 
 
