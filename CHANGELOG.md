@@ -19,6 +19,9 @@
 ## 1.0.5
 
 - Added more options.
+## 1.0.6
+
+- Added Horion brands.
 
 
 

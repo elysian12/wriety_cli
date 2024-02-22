@@ -23,6 +23,7 @@ ${dcli.orange('Please select a brand')}
 5) ${dcli.green('Generic')} 
 6) ${dcli.green('HiteVision')} 
 7) ${dcli.green('Crown')} 
+8) ${dcli.green('Horion')} 
 
 ''');
 
@@ -68,8 +69,9 @@ ${dcli.orange('Please select a brand')}
     final updatedbranding4 = updatedbranding3.replaceFirst("static const brand = Brands.aiBoard", 'static const brand = Brands.${SwitchBranding.brand.name}');
     final updatedbranding5 = updatedbranding4.replaceFirst("static const brand = Brands.hitevision", 'static const brand = Brands.${SwitchBranding.brand.name}');
     final updatedbranding6 = updatedbranding5.replaceFirst("static const brand = Brands.crown", 'static const brand = Brands.${SwitchBranding.brand.name}');
+    final updatedbranding7 = updatedbranding6.replaceFirst("static const brand = Brands.horion", 'static const brand = Brands.${SwitchBranding.brand.name}');
 
-    File('lib/common/branding.dart').writeAsStringSync(updatedbranding6);
+    File('lib/common/branding.dart').writeAsStringSync(updatedbranding7);
 
     print('''
 # ---------------------------------
@@ -203,8 +205,14 @@ class SwitchBranding {
           appLogo: "assets/branding/aiboard/ai_app_logo.png",
           packageName: 'play.wriety.crown',
         );
+      case Brands.horion:
+        return Branding(
+          name: "Horion",
+          appLogo: "assets/branding/horion/horion_app_logo.png",
+          packageName: 'play.wriety.horion',
+        );
     }
   }
 }
 
-enum Brands { wriety, epson, dahua, hikvision, aiBoard, hitevision, crown }
+enum Brands { wriety, epson, dahua, hikvision, aiBoard, hitevision, crown, horion }
