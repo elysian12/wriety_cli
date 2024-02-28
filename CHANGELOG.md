@@ -22,6 +22,9 @@
 ## 1.0.6
 
 - Added Horion brands.
+## 1.0.7
+
+- Bumped dart version to latest.
 
 
 
