@@ -47,6 +47,8 @@ ${dcli.orange('Please select a brand')}
         SwitchBranding.updateBranding(Brands.hitevision);
       case '7':
         SwitchBranding.updateBranding(Brands.crown);
+      case '8':
+        SwitchBranding.updateBranding(Brands.horion);
         break;
       default:
     }
